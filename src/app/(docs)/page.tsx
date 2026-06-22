@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { navigation } from "@/data/navigation";
 
 export default function DocsHome() {
@@ -6,17 +7,21 @@ export default function DocsHome() {
     <div>
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
-            <span className="text-white font-bold text-lg">DS</span>
-          </div>
+          <Image
+            src="/logo-DS.png"
+            alt="DS Design & Motion"
+            width={48}
+            height={48}
+            className="w-12 h-12 invert"
+          />
           <div>
-            <h1 className="text-3xl font-bold text-zinc-900">
+            <h1 className="text-3xl font-bold text-white">
               DS Design & Motion
             </h1>
-            <p className="text-sm text-zinc-500">Brand System</p>
+            <p className="text-sm text-zinc-600">Brand System</p>
           </div>
         </div>
-        <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl">
+        <p className="text-lg text-zinc-500 leading-relaxed max-w-2xl">
           Design, motion e vídeo para eventos que precisam comunicar com
           clareza, impacto e padrão profissional.
         </p>
@@ -25,9 +30,9 @@ export default function DocsHome() {
         {navigation.map((section) => (
           <div
             key={section.label}
-            className="bg-white rounded-xl border border-zinc-200 p-5"
+            className="bg-surface rounded-xl border border-white/5 p-5"
           >
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-600 mb-3">
               {section.label}
             </h2>
             <ul className="space-y-2">
@@ -35,7 +40,7 @@ export default function DocsHome() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-zinc-700 hover:text-blue-600 transition-colors"
+                    className="text-sm text-zinc-400 hover:text-accent transition-colors"
                   >
                     {item.title}
                   </Link>
